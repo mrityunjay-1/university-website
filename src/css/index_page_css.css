@@ -13,15 +13,17 @@ body{
 .main-div{
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .main-div-child1{
-    width: 17.5%;
+    width: 14.5%;
     height: 100vh;
     /*background-color: yellow;*/
     display: flex;
     flex-flow: column;
-    box-shadow: 1px 1px 5px black; 
+    box-shadow: 1px 1px 5px black;
+    transition: all 0.3s ease; 
 }
 .main-div-child1-child2{
     overflow-y: scroll;
@@ -39,15 +41,14 @@ body{
     flex-grow: 1;
     padding: auto;
     display: flex;
-    align-items: center;  
+    align-items: center;
 }
 .main-div-child1-child2 > div:hover{
     background-color: rgb(81, 119, 243);
-    
 }
 
 .main-div-child2{
-    width: 82%;
+    width: 85%;
     height: 100vh;
     background-color: #e6e6e6;
     overflow-y: scroll;
@@ -57,12 +58,34 @@ body{
     display: none;
 }
 
+.hamburger-button{
+    z-index: 9999999;
+    display: none;
+}
+.headings_in_site{
+    font-size: 3rem;
+}
+
+h4{
+    padding: 0.3rem 0;
+}
 
 @media(max-width: 760px){
     .main-div-child1{
-        display: none;
+        width: 50%;
+        position: absolute;
+        left: -50%;
+        z-index: 99999;
+        background-color: white;
     }
     .main-div-child2{
         width: 100%;
+    }
+    .hamburger-button{
+        display: block;
+    }
+    
+    .headings_in_site{
+        font-size: 2rem;
     }
 }
